@@ -57,7 +57,7 @@
             align-items: center;
         }
         .navbar .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
@@ -69,7 +69,6 @@
 
         /* --- Hero Section --- */
         .hero {
-            /* Updated to use your uploaded image */
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-background.jpg') no-repeat center center/cover;
             color: #ffffff;
             text-align: center;
@@ -173,6 +172,7 @@
         .form-group label { display: block; margin-bottom: 8px; font-weight: bold; }
         .form-group input, .form-group textarea {
             width: 100%;
+            box-sizing: border-box; /* Important for padding */
             padding: 15px;
             border: 1px solid #ced4da;
             border-radius: var(--border-radius);
@@ -191,6 +191,60 @@
             text-align: center;
             padding: 30px 0;
         }
+
+        /* ============================================= */
+        /* --- Responsive Styles for Mobile --- */
+        /* ============================================= */
+        @media (max-width: 768px) {
+            .container {
+                width: 85%;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            
+            /* --- Navbar on Mobile --- */
+            .navbar .logo {
+                font-size: 1.2rem;
+            }
+            .navbar .nav-links li {
+                margin-left: 15px;
+            }
+            .navbar .nav-links a {
+                font-size: 0.9rem;
+            }
+
+            /* --- Hero on Mobile --- */
+            .hero {
+                padding: 80px 0;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            /* --- Why Us Section on Mobile --- */
+            .why-us-grid {
+                /* This is the key change: stacks the columns */
+                grid-template-columns: 1fr; 
+                gap: 40px;
+            }
+            .why-us-content {
+                /* Puts the text below the image on mobile */
+                order: 2;
+            }
+            .why-us-image {
+                order: 1;
+            }
+
+            /* --- Form on Mobile --- */
+            #contact form {
+                padding: 30px;
+            }
+        }
+
     </style>
 </head>
 <body>
